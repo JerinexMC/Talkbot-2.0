@@ -1,0 +1,32 @@
+# TalkBot 2.0
+# Use an OpenAI-compatible chat-completions endpoint.
+# Keep your API key private. You can also set TALK BOT_API_KEY as an environment variable
+# (the exact variable name used by this plugin is TALK_BOT_API_KEY).
+ai:
+  enabled: false
+  provider: OPENAI_COMPATIBLE
+  api-url: "https://api.openai.com/v1/chat/completions"
+  api-key: "YOUR_API_KEY_HERE"
+  model: "gpt-4o-mini"
+  timeout-seconds: 35
+  max-tokens: 100
+  temperature: 0.9
+
+chat:
+  fallback-format: "<white>%name%: <gray>%message%"
+  min-reply-delay-ticks: 25
+  max-reply-delay-ticks: 75
+  random-reply-chance: 0.08
+  bot-to-bot-chance: 0.12
+  max-message-length: 180
+  global-cooldown-seconds: 8
+  per-bot-cooldown-seconds: 25
+  # Bots will only answer when the AI provider is enabled and configured.
+
+personality:
+  default: "You're an ordinary Minecraft player. Talk casually and naturally. Be concise. You can use modern gaming slang naturally, but don't overdo it. Never use emojis. Never claim to see inventory, health, coordinates, combat, or other game state unless it is explicitly included in the conversation. Don't sound like an assistant."
+  # Optional per-bot overrides:
+  bots: {}
+
+database:
+  filename: "talkbot.db"

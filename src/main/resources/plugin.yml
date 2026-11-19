@@ -1,0 +1,15 @@
+name: TalkBot
+version: 2.0.0
+main: com.talkbot.plugin.TalkBotPlugin
+api-version: '1.21'
+author: TalkBot
+description: Gives registered PvpBot players conversational chat.
+commands:
+  talkbot:
+    description: Manage TalkBot.
+    usage: /talkbot <register|unregister|list|reload|test|status>
+    permission: talkbot.admin
+permissions:
+  talkbot.admin:
+    description: Allows management of TalkBot.
+    default: op
