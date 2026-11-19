@@ -185,5 +185,18 @@ public final class ChatManager {
     public void shutdown() {
         shuttingDown.set(true);
         if (cleanupTask != null) cleanupTask.cancel();
+        public void handleWhisperMessage(
+        Player sender,
+        String botName,
+        String message
+) {
+    if (shuttingDown.get() || !enabled || !configured()) return;
+
+    if (!registry.isBot(botName)) return;
+
+    if (Bukkit.getPlayerExact(botName) == null) return;
+
+    requestWhisperReply(botName, sender.getName(), message);
+}
     }
 }
