@@ -27,6 +27,7 @@ public final class ChatManager {
     private final HttpClient http = HttpClient.newBuilder().connectTimeout(Duration.ofSeconds(10)).build();
     private final Map<String, Long> lastBotReply = new ConcurrentHashMap<>();
     private final Map<String, Deque<String>> memory = new ConcurrentHashMap<>();
+    private final Map<String, Deque<String>> privateMemory = new ConcurrentHashMap<>();
     private final AtomicBoolean shuttingDown = new AtomicBoolean(false);
     private volatile int minDelay;
     private volatile int maxDelay;
