@@ -36,6 +36,10 @@ public final class TalkBotPlugin extends JavaPlugin {
         command.setExecutor(executor);
         command.setTabCompleter(executor);
         getServer().getPluginManager().registerEvents(new ChatListener(this, chatManager), this);
+        getServer().getPluginManager().registerEvents(
+        new WhisperListener(this, botRegistry, chatManager),
+        this
+);
         getLogger().info("TalkBot 2.0 enabled. Registered bots: " + botRegistry.getRegisteredBots().size());
     }
 
