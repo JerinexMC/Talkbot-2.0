@@ -1,5 +1,6 @@
 package com.talkbot.plugin;
 
+import com.talkbot.plugin.listener.WhisperListener;
 import com.talkbot.plugin.commands.TalkBotCommand;
 import com.talkbot.plugin.listener.ChatListener;
 import com.talkbot.plugin.manager.BotRegistry;
